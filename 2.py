@@ -6,9 +6,8 @@ speed= st.number_input('車速的資料收集:限速100 =>')
 temp = st.number_input('溫度的資料收集:限溫30 =>')
 轉速 = st.number_input('轉速資料的收集:限轉12000 =>')
 confirm_input  = st.botton('確認輸入')
-if confirm_input:
 
-if gas <= car_simulation.get('gas_warning'):
+if gas confirm_input <= car_simulation.get('gas_warning'):
   st.write('油箱只剩', gas, '格! 準備加油!!')
 else:
   st.write('油箱還剩', gas, '格。')
