@@ -1,7 +1,7 @@
 import streamlit as st
 
 # st.beta container():
-st.columns()
+st.columns(1)
 # dict = {}
 for i in range(1,10):
 #         dict[i] = ' '
@@ -26,14 +26,14 @@ def print_board():
     st.write(dict[1], '|' , dict[2] , '|', dict[3])
      
 def main( ):
-    move1 = int(input('你想怎麼走?'))
+    move1 = int(text_input('你想怎麼走?'))
     if dict[move1] == ' ':
       dict[move1] = 'X'
     else:
         print('這是被禁止的')
     print_board()
 
-    move2 = int(input('你想怎麼走?'))
+    move2 = int(text_input('你想怎麼走?'))
     if dict[move2] == ' ':
         dict[move2] = 'O'
     else:
@@ -45,9 +45,9 @@ def main( ):
     else:
         main()
 
-a = input('想玩井字遊戲嗎？（是/否): ')
+a = test_input('想玩井字遊戲嗎？（是/否): ')
 if a =='是':
 
     main()
 else:
-    print('可憐')
+    wt.write('可憐')
