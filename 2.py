@@ -3,9 +3,9 @@ import streamlit as st
 # st.beta container():
 st.columns()
 # dict = {}
-      for i in range(1,10):
+for i in range(1,10):
 #         dict[i] = ' '
-            d = {}
+      d = {}
 
 def check():
     if (dict[1] == dict[2]== dict[3] != ' ' 
