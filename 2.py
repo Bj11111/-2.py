@@ -3,7 +3,7 @@ import streamlit as st
 # st.beta container():
 st.columns(1)
 # dict = {}
-with for i in range(1,10):
+for i in range(1,10):
 #         dict[i] = ' '
       d = {}
 
