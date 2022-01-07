@@ -29,9 +29,9 @@ def main( ):
 #     move1 = int(text_input('你想走哪一格?'))
       move1 =  st.number_input('你想走哪一格?')
     if dict[move1] == ' ':
-                  dict[move1] = 'X'
+        dict[move1] = 'X'
     else:
-        print('這是無效移動')
+        st.write('這是無效移動')
     print_board()
 
     move2 = int(text_input('你想走哪一格?'))
