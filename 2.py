@@ -1,5 +1,5 @@
 import streamlit as st
-st.beta_container():
+st.beta container():
 # with st.columns():
 # dict = {}
     for i in range(1,10):
