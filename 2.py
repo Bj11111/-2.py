@@ -34,17 +34,17 @@ def main( ):
           st.write('這是無效移動')
       print_board()
 
-    move2 = int(text_input('你想走哪一格?'))
-    if dict[move2] == ' ':
-        dict[move2] = 'O'
-    else:
-        print('這是無效移動')
-    print_board()
+      move2 = int(text_input('你想走哪一格?'))
+      if dict[move2] == ' ':
+          dict[move2] = 'O'
+      else:
+          st.write('這是無效移動')
+      print_board()
     
-    if check():
-        print('game over')
-    else:
-        main()
+      if check():
+          st.write('game over')
+      else:
+          main()
 
 
 a = st.text_input('想玩井字遊戲嗎？（是/否): ')
