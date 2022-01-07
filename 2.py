@@ -19,7 +19,7 @@ def check():
         return True
 
 # def print_board():
-def drawBoard(board):
+def display_(board):
     st.write(dict[7], '|' , dict[8] , '|', dict[9])
     st.write('- + - + -') 
     st.write(dict[4], '|' , dict[5] , '|', dict[6])
