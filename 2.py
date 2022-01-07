@@ -1,6 +1,7 @@
 dict = {}
 for i in range(1,10):
     dict[i] = ' '
+import streamlit as st
 
 def check():
     if (dict[1] == dict[2]== dict[3] != ' ' 
@@ -14,11 +15,11 @@ def check():
         return True
 
 def print_board():
-    print(dict[7], '|' , dict[8] , '|', dict[9])
-    print('- + - + -') 
-    print(dict[4], '|' , dict[5] , '|', dict[6])
-    print('- + - + -')
-    print(dict[1], '|' , dict[2] , '|', dict[3])
+    st.write(dict[7], '|' , dict[8] , '|', dict[9])
+    st.write('- + - + -') 
+    st.write(dict[4], '|' , dict[5] , '|', dict[6])
+    st.write('- + - + -')
+    st.write(dict[1], '|' , dict[2] , '|', dict[3])
      
 def main( ):
     move1 = int(input('你想怎麼走?'))
