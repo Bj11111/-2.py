@@ -1,5 +1,5 @@
 import streamlit as st
-with st.st.columns():
+with st.columns():
 # dict = {}
     for i in range(1,10):
 #         dict[i] = ' '
