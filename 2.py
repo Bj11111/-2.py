@@ -50,6 +50,6 @@ def main():
 
 a = st.text_input('想玩井字遊戲嗎？（是/否): ')
 if a =='是':
-    main(1)
+    main()
 else:
     st.write('歡迎來玩')
