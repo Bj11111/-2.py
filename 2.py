@@ -1,9 +1,9 @@
 import streamlit as st
 
 # st.beta container():
-st.columns()
+st.columns(1)
 # dict = {}
-for i in range(1,10):
+with for i in range(1,10):
 #         dict[i] = ' '
       d = {}
 
