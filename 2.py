@@ -32,7 +32,7 @@ def main( ):
         dict[move1] = 'X'
       else:
           st.write('這是無效移動')
-    print_board()
+      print_board()
 
     move2 = int(text_input('你想走哪一格?'))
     if dict[move2] == ' ':
