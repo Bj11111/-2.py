@@ -4,8 +4,8 @@ import streamlit as st
 st.columns(1)
 # dict = {}
 for i in range(1,10):
-         dict[i] = ' '
-#       d = {}
+#          dict[i] = ' '
+         d = {}
 
 def check():
     if (dict[1] == dict[2]== dict[3] != ' ' 
