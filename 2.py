@@ -2,8 +2,8 @@ import streamlit as st
 with st.beta_container():
 # dict = {}
     for i in range(1,10):
-        dict[i] = ' '
-
+#         dict[i] = ' '
+          d = {}
 
 def check():
     if (dict[1] == dict[2]== dict[3] != ' ' 
