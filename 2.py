@@ -25,9 +25,9 @@ def print_board():
     st.write('- + - + -')
     st.write(dict[1], '|' , dict[2] , '|', dict[3])
      
-def main( ):
+def main(1):
 #       move1 = int(text_input('你想走哪一格?'))
-      move1 =  st.sidebar('你想走哪一格?')
+      move1 = st.sidebar('你想走哪一格?')
       if dict[move1] == ' ' :
         dict[move1] = 'X'
       else:
@@ -44,12 +44,11 @@ def main( ):
       if check():
           st.write('game over')
       else:
-          main()
+          main(1)
 
 
 a = st.text_input('想玩井字遊戲嗎？（是/否): ')
 if a =='是':
-
-    main()
+    main(1)
 else:
     st.write('歡迎來玩')
