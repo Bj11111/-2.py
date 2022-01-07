@@ -1,83 +1,94 @@
-from random import randint
-# from constants import *
+import turtle
+import random
+
+my_wn = turtle.Screen()
+my_pen = turtle.Turtle()	#my turtle
+my_pen.speed(0)
+my_wn.bgcolor("grey")
+my_pen.color("white", "light blue")
+my_wn.tracer(1, 10)
 
 
-class Game(object):
-    def __init__(self, length=GAME_LENGTH, level='easy'):
-        self.length = length
-        self.initial_state = self.new_game
-        self.turns = 0
-        self.difficulty = level
-        self.max_turns = self.level_control()
-        print(self.initial_state)
+class Game():
+	g1x = 50	#start pos
+	g1y = 50
+	g2x = -50	#start pos
+	g2y = -50
+	
+	dx = 0	#wektor przesuniecia
+	dy = 10
+	
+	speed = 200
+	taken = []	#zajete miejsca
 
-    def level_control(self):
-        if self.difficulty == 'easy':
-            return 10
-        elif self.difficulty == 'medium':
-            return 8
-        elif self.difficulty == 'hard':
-            return 5
-        # unacceptable value taken as default
-        else:
-            return 10
-
-    @property
-    def new_game(self):
-        initial = []
-        while len(initial) < self.length:
-            color = COLORS[str(randint(MIN_COLORS, MAX_COLORS))]
-            if color not in initial:
-                initial.append(color)
-        return initial
-
-    def turn(self):
-        white = 0
-        black = 0
-        guess = input().split(',')
-        for item in guess:
-            if item in self.initial_state:
-                white += 1
-        for j in range(0, self.length):
-            if guess[j] == self.initial_state[j]:
-                black += 1
-        self.turns += 1
-        return black, white
-
-    def check_game_over(self, black, white):
-        if self.is_won(black):
-            self.win_message()
-            return True
-        elif self.is_lose(black):
-            self.lose_message()
-            return True
-        else:
-            self.state_of_game(black, white)
-            return False
-
-    def is_won(self, black):
-        return black == self.length
-
-    def is_lose(self, black):
-        return self.turns == self.max_turns and not self.is_won(black)
-
-    def play(self):
-        while self.turns < self.max_turns:
-            black, white = self.turn()
-            if self.check_game_over(black, white):
-                break
-
-    def state_of_game(self, black, white):
-        print("black:{}\t white:{}".format(black, white))
-        print("you have {} attempts left.".format(self.max_turns - self.turns))
-
-    def win_message(self):
-        print("you won!")
-
-    def lose_message(self):
-        print("you lose!")
+game = Game()
 
 
-g = Game()
-g.play()
 
+def teleport():		#leci na miejsce
+	my_pen.up()
+	my_pen.goto(game.g1x, game.g1y)
+	my_pen.down()
+
+def my_square(a):	#rysuje kwadrat
+	teleport()
+	my_pen.begin_fill()
+	for i in range(4):
+		my_pen.forward(10)
+		my_pen.right(90)
+	my_pen.end_fill()
+	
+	game.taken.append((game.g1x,game.g1y))	#dodanie ruchu do woreczka
+	#print(game.taken)
+	
+def move_up():
+	game.dy = 10
+	game.dx = 0
+	
+	
+def move_down():
+	game.dy = -10
+	game.dx = 0
+	
+
+def move_left():
+	game.dx = -10
+	game.dy = 0
+	
+
+def move_right():
+	game.dx = 10
+	game.dy = 0
+	
+
+def game_loop():
+	game.g1x += game.dx
+	game.g1y += game.dy
+	my_square(10)
+
+	
+	my_wn.ontimer(game_loop, game.speed)
+
+
+#gra
+teleport()
+my_square(10)
+game_loop()
+
+my_wn.listen()
+my_wn.onkeypress(move_up, "Up")
+my_wn.onkeypress(move_down, "Down")
+my_wn.onkeypress(move_left, "Left")
+my_wn.onkeypress(move_right, "Right")
+
+my_wn.delay(0)
+
+
+turtle.done()
+# BIBLIOTEKI TURTLOWE
+#def done():
+#	while True:
+#		if nacisnieto_klawisz():
+#			uruchom_onkeypress_zarejestrowany();
+#		if czas_minal():
+#			uruchom_timery()
