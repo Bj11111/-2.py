@@ -1,7 +1,7 @@
 import streamlit as st
 with st.beta_container():
 # dict = {}
-for i in range(1,10):
+    for i in range(1,10):
     dict[i] = ' '
 
 
