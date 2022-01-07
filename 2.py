@@ -1,5 +1,6 @@
 import streamlit as st
-st.beta container():
+st.sidebar
+# st.beta container():
 # with st.columns():
 # dict = {}
     for i in range(1,10):
